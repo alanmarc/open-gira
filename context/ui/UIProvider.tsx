@@ -5,13 +5,16 @@ export interface UIState {
    sidemenuOpen: boolean,
 }
 
+export interface Props {
+    children: React.ReactNode
+}
 
 const UI_INITIAL_STATE: UIState = {
    sidemenuOpen: false,
 }
 
 
-export const UIProvider:FC = ( {children} ) => {
+export const UIProvider = ( {children}: Props ) => {
 
    const [state, dispatch] = useReducer( uiReducer, UI_INITIAL_STATE);
 
